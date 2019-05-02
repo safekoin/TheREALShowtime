@@ -162,19 +162,26 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
             }
             guard let token = session?.authToken else {return}
             guard let secret = session?.authTokenSecret else {return}
+            
             let credential = TwitterAuthProvider.credential(withToken: token, secret: secret)
-            Auth.auth().signIn(with: credential, completion: { (user, error) in
+            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
                 if error != nil {
                     print("Failed to Login using Firebase: \(String(describing:error?.localizedDescription))")
                     return
+               
                 }
+                if let auth = authResult {
+                    
+                    print("Successfully Authenticated User to Firebase: \(auth.user.uid)")
+                    
+                    self.goToHome()
             }
-        )}
+        }
     }
 
 }
 
-
+}
 
 
 //MARK: ScrollView Delegate

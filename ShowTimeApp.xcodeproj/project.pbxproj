@@ -135,6 +135,7 @@
 			children = (
 				04DAE2B5227398CD0040D4D5 /* SplashViewController.swift */,
 				044FC3252273833100367162 /* LoginViewController.swift */,
+				04FDB1AB226F955B00E2878F /* AttractionScene */,
 			);
 			path = LoginScene;
 			sourceTree = "<group>";
@@ -218,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				044FC3242273831E00367162 /* LoginScene */,
-				04FDB1AB226F955B00E2878F /* AttractionScene */,
 				046172912270F51300F9F1CC /* FavoriteScene */,
 				0413139D22724E89005061F7 /* WebScene */,
 			);
